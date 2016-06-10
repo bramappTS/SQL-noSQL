@@ -110,8 +110,9 @@ function main() {
 	itemID = getMaxItemID(db) || 1;	//number at which item IDs start
 	if(debug) println("itemID= "+itemID);
 	billNum = 10000000;	//number of bills to be added
-
-	for(var i = 0; i<billNum; i++){
+	
+	var i;
+	for(i = 0; i<billNum; i++){
 		if(debug) println("--------start query------------");
 		var que = new QSqlQuery(db);
 		que.setForwardOnly(true);
@@ -146,4 +147,5 @@ function main() {
 
 		//que.finish();
 	}
+	println("Successfully added "+i+" bills");
 }
